@@ -9,6 +9,7 @@ from urllib.parse import quote_plus
 from pyrogram import filters, Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyshorteners import Shortener
 
 from Dxbots.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
@@ -18,6 +19,14 @@ MY_PASS = os.environ.get("MY_PASS", None)
 pass_dict = {}
 pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 
+def get_shortlink(url):
+   shortlink = False 
+   try:
+      shortlink = Shortener().dagd.short(url)
+   except Exception as err:
+       print(err)
+       pass
+   return shortlink
 
 @DxStreamBot.on_message((filters.regex("login🔑") | filters.command("login")) , group=4)
 async def login_handler(c: Client, m: Message):
@@ -96,7 +105,10 @@ async def private_receive_handler(c: Client, m: Message):
     try:
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        stream_linkk = f"https://linksearn.site/st?api={Var.API}&url={stream_link}"
+
+        online_link = f"https://linksearn.site/st?api={Var.API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_linkkk = get_shortlink(online_link)
        
         msg_text ="""<b>📚 𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 ⇛\n\n📕 ꜰɪʟᴇ ɴᴀᴍᴇ : {}\n\n📊 ꜰɪʟᴇ ꜱɪᴢᴇ :{}\n\n📥 Dᴏᴡɴʟᴏᴀᴅ : {}\n\n💻 WATCH  : {}\n\n⚠️ Nᴏᴛᴇ : 𝙇𝙞𝙣𝙠 𝙬𝙞𝙡𝙡 𝙣𝙤𝙩 𝙚𝙭𝙥𝙞𝙧𝙚 𝙪𝙣𝙩𝙞𝙡 𝙞 𝙙𝙚𝙡𝙚𝙩𝙚</b>"""
 
@@ -105,8 +117,8 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("∙ ꜱᴛʀᴇᴀᴍ ∙", url=stream_link), #Stream Link
-                                                InlineKeyboardButton("∙ ᴅᴏᴡɴʟᴏᴀᴅ ∙", url=online_link)]]) #Download Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("∙ ꜱᴛʀᴇᴀᴍ ∙", url=online_linkkk), #Stream Link
+                                                InlineKeyboardButton("∙ ᴅᴏᴡɴʟᴏᴀᴅ ∙", url=online_linkkk)]]) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
