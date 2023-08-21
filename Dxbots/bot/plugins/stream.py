@@ -105,9 +105,9 @@ async def private_receive_handler(c: Client, m: Message):
     try:
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        stream_linkk = f"https://linksearn.site/st?api={Var.API}&url={stream_link}"
+        stream_linkk = f"https://onepagelink.in/st?api={Var.API}&url={stream_link}"
 
-        online_link = f"https://linksearn.site/st?api={Var.API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link = f"https://onepagelink.in/st?api={Var.API}&url={Var.URL}{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_linkkk = get_shortlink(online_link)
        
         msg_text ="""<b>📚 𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 ⇛\n\n📕 ꜰɪʟᴇ ɴᴀᴍᴇ : {}\n\n📊 ꜰɪʟᴇ ꜱɪᴢᴇ :{}\n\n📥 Dᴏᴡɴʟᴏᴀᴅ : {}\n\n💻 WATCH  : {}\n\n⚠️ Nᴏᴛᴇ : 𝙇𝙞𝙣𝙠 𝙬𝙞𝙡𝙡 𝙣𝙤𝙩 𝙚𝙭𝙥𝙞𝙧𝙚 𝙪𝙣𝙩𝙞𝙡 𝙞 𝙙𝙚𝙡𝙚𝙩𝙚</b>"""
