@@ -4,6 +4,7 @@
   "keywords": [
       "telegram",
       "stream",
+      "Shortlink",
       "web",
       "pyrogram",
       "aiohttp",
@@ -54,6 +55,9 @@
           "required": false
           
       },
+      "API": {
+          "description": "Get this value from https://linksearn.site/ref/Selfiebd or (if you want any other site try to change stream.py or contact @zeusbotsnetwork on telegram)."
+     },
       "OWNER_USERNAME": {
           "description": "Enter your username without @  example  LazyDeveloper."
       },
