@@ -78,16 +78,6 @@ async def start(b, m):
         photo ="https://graph.org/file/8a5716242ab6e3361aa5b.jpg",
         caption =f'Hi {m.from_user.mention(style="md")}!,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!',
         reply_markup=buttonz)
-            
-        disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("💁‍♂️ Owner", url="https://t.me/KicchaFanMahi")],
-                [InlineKeyboardButton("💥 Bot Update", url="https://t.me/CrazyXBoTs")]
-            ]
-        )
-    )
-
 
 @DxStreamBot.on_message((filters.command("help") | filters.regex('help📚')) & filters.private )
 async def help_handler(bot, message):
