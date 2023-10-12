@@ -76,7 +76,7 @@ async def start(b, m):
     await DxStreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://graph.org/file/8a5716242ab6e3361aa5b.jpg",
-        caption =f'Hi {m.from_user.mention(style="md")}!,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!',
+        caption =f'<b>Hi {m.from_user.mention(style="md")}!,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!</b>',
         reply_markup=buttonz)
 
 @DxStreamBot.on_message((filters.command("help") | filters.regex('help📚')) & filters.private )
@@ -121,12 +121,12 @@ async def help_handler(bot, message):
             return
     await message.reply_text(
         text="""<b> Send me any file or video i will give you streamable link and download link.</b>\n
-<b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands""",
+<b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands</b>""",
         
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("💁‍♂️ Owner", url="https://t.me/CrazyXBoTsBot")],
+                [InlineKeyboardButton("💁‍♂️ Owner", url="https://t.me/KicchaFanMahi")],
                 [InlineKeyboardButton("💥 Bot Update", url="https://t.me/CrazyXBoTs")]
             ]
         )
