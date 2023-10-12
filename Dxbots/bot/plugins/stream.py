@@ -66,7 +66,7 @@ async def private_receive_handler(c: Client, m: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=m.chat.id,
-                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/crazysupportz) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
+                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/KicchaFanMahi) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
                     
                     disable_web_page_preview=True
                 )
@@ -89,7 +89,7 @@ async def private_receive_handler(c: Client, m: Message):
             await m.reply_text(e)
             await c.send_message(
                 chat_id=m.chat.id,
-                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ Support** [Support](https://t.me/crazysupportz)",
+                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ Support** [Support](https://t.me/KicchaFanMahi)",
                 
                 disable_web_page_preview=True)
             return
@@ -98,7 +98,7 @@ async def private_receive_handler(c: Client, m: Message):
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
        
-        msg_text ="""<b>📚 𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 ⇛\n\n📕 ꜰɪʟᴇ ɴᴀᴍᴇ : {}\n\n📊 ꜰɪʟᴇ ꜱɪᴢᴇ :{}\n\n📥 Dᴏᴡɴʟᴏᴀᴅ : {}\n\n💻 WATCH  : {}\n\n⚠️ Nᴏᴛᴇ : 𝙇𝙞𝙣𝙠 𝙬𝙞𝙡𝙡 𝙣𝙤𝙩 𝙚𝙭𝙥𝙞𝙧𝙚 𝙪𝙣𝙩𝙞𝙡 𝙞 𝙙𝙚𝙡𝙚𝙩𝙚</b>"""
+        msg_text ="""<b>📚 ʏᴏᴜʀ ʟɪɴᴋ ɢᴇɴᴀʀᴀᴛᴇᴅ ⚡️ \n\n📕 ꜰɪʟᴇ ɴᴀᴍᴇ : {}\n\n📊 ꜰɪʟᴇ ꜱɪᴢᴇ : {}\n\n📥 Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ : {}\n\n💻 Sᴛʀᴇᴀᴍ ʟɪɴᴋ  : {}\n\n⚠️ Nᴏᴛᴇ : ʟɪɴᴋ ᴡɪʟʟ ɴᴏᴛ ᴇxᴩɪʀᴇ ᴜɴᴛɪʟ ɪ ᴅʀʟᴇᴛᴇ : @CrazyXBoTs</b>"""
 
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Stream ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True,  quote=True)
         await m.reply_text(
